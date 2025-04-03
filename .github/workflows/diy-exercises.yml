@@ -31,18 +31,20 @@ jobs:
   unit_tests_job:
     runs-on: pytest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: 3.12
+
       - name: Install dependencies
         run: 
-          python -m pip install --upgrade pip
-          pip install -r /home/ctw04263/DA9-CTW04263/02_devops_fundamentals/github_actions/diy_1/unit_tests/requirements.txt
+          pip install -r 02_devops_fundamentals/github_actions/diy_1/unit_tests/requirements.txt
+
       - name: Test with pytest
         run: 
-          pip install pytest pytest-cov
-          pytest tests.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+          pytest 02_devops_fundamentals/github_actions/diy_1/unit_tests --cov
 
 
