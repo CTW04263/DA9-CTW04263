@@ -1,0 +1,17 @@
+name: Unit tests using action
+
+on:
+  push:
+    branches-ignore: [main]
+
+jobs:
+
+  unit_tests_job:
+    runs-on: self-hosted
+    steps:
+      - name: Unit tests using action
+        uses: ./.github/unit-tests-action/action.yml
+        with: 
+          requirements_path: 02_devops_fundamentals/github_actions/diy_1/unit_tests/requirements.txt
+          unit_test_path: 02_devops_fundamentals/github_actions/diy_1/unit_tests
+          
