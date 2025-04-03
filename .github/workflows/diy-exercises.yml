@@ -2,10 +2,10 @@ name: Greeting data academy
 
 on:
   push:
-    branches-ignore: [main]
+    branches: [main]
 
 env:
-  DAY_OF_WEEK: <<FILL_ME>>
+  DAY_OF_WEEK: Thursday
 
 jobs:
   greeting_job:
@@ -14,7 +14,7 @@ jobs:
       GREETING: Hello
     steps:
       - name: "Say 'Hello Data Academy 9th edition, this is <today's weekday> 's first exercise! I'm <MY_NAME>!'"
-        run: echo "$GREETING $ACADEMY_TYPE Academy 9th edition, this is $DAY_OF_WEEK's second exercise!"
+        run: echo "$GREETING $ACADEMY_TYPE Academy 9th edition, this is $DAY_OF_WEEK's second exercise! I'm $GITHUB_ACTOR"
         env:
           ACADEMY_TYPE: Data
 
