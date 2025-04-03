@@ -18,3 +18,14 @@ jobs:
         env:
           ACADEMY_TYPE: Data
 
+  week_job:
+    runs-on: self-hosted
+    needs: greeting_job
+    env:
+      WEEK_NUMBER: first 
+      MONTH: april
+    steps:
+      - name: "Say what is the current week of the month"
+        run: echo "We are on the $WEEK_NUMBER week of $MONTH."
+
+
