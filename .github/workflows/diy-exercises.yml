@@ -29,7 +29,7 @@ jobs:
         run: echo "We are on the $WEEK_NUMBER week of $MONTH."
 
   unit_tests_job:
-    runs-on: pytest
+    runs-on: self-hosted
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
